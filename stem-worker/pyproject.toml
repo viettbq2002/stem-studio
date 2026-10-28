@@ -1,0 +1,27 @@
+[project]
+name = "stem-worker"
+version = "0.1.0"
+description = "A worker for stem-studio that uses demucs v3 to separate audio into stems."
+readme = "README.md"
+authors = [
+    { name = "viettbq2002", email = "thaibinhquocviet2002@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "demucs>=4.0.1",
+    "numpy>=2.5.4",
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+stem-worker = "stem_worker.main:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.2",
+]
